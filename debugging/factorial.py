@@ -12,9 +12,11 @@ def factorial(n):
 if __name__ == "__main__":
 	if len(sys.argv) != 2:
 		print("Usage: ./factorial.py <number>")
+		sys.exit(1)
 	else:
 		try:
 			n = int(sys.argv[1])
 			print(factorial(n))
 		except ValueError:
 			print("Please provide a valid integer.")
+			sys.exit(1)
