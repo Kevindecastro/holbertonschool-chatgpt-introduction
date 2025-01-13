@@ -2,11 +2,19 @@
 import sys
 
 def factorial(n):
-		result = 1
-		while n > 1:
-			result *= n
-			n -= 1  # On décrémente n pour sortir de la boucle
-			return result
+	"""Calculates the factorial of a given number."""
+	result = 1
+	while n > 1:
+		result *= n
+		n -= 1
+	return result
 
-f = factorial(int(sys.argv[1]))
-print(f)
+if __name__ == "__main__":
+	if len(sys.argv) != 2:
+		print("Usage: ./factorial.py <number>")
+	else:
+		try:
+			n = int(sys.argv[1])
+			print(factorial(n))
+		except ValueError:
+			print("Please provide a valid integer.")
